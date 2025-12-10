@@ -1,15 +1,16 @@
 package main
 
 import (
-	"bwastartup/auth"
-	"bwastartup/campaign"
-	"bwastartup/database"
-	"bwastartup/handler"
-	"bwastartup/helper"
-	"bwastartup/transaction"
-	"bwastartup/user"
 	"net/http"
 	"strings"
+
+	"github.com/rizkymfz/golang-campaign/auth"
+	"github.com/rizkymfz/golang-campaign/campaign"
+	"github.com/rizkymfz/golang-campaign/database"
+	"github.com/rizkymfz/golang-campaign/handler"
+	"github.com/rizkymfz/golang-campaign/helper"
+	"github.com/rizkymfz/golang-campaign/transaction"
+	"github.com/rizkymfz/golang-campaign/user"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"

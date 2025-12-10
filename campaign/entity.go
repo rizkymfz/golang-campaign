@@ -1,8 +1,9 @@
 package campaign
 
 import (
-	"bwastartup/user"
 	"time"
+
+	"github.com/rizkymfz/golang-campaign/user"
 )
 
 type Campaign struct {

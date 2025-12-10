@@ -1,9 +1,11 @@
 package transaction
 
 import (
-	"bwastartup/campaign"
-	"bwastartup/user"
 	"time"
+
+	"github.com/rizkymfz/golang-campaign/user"
+
+	"github.com/rizkymfz/golang-campaign/campaign"
 )
 
 type Transaction struct {

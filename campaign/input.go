@@ -1,6 +1,6 @@
 package campaign
 
-import "bwastartup/user"
+import "github.com/rizkymfz/golang-campaign/user"
 
 type CreateCampaignInput struct {
 	Name             string `json:"name" binding:"required"`

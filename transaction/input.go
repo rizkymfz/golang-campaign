@@ -1,6 +1,6 @@
 package transaction
 
-import "bwastartup/user"
+import "github.com/rizkymfz/golang-campaign/user"
 
 //cocok kalo param lebih dari satu
 type GetCampaignTransactionInput struct {

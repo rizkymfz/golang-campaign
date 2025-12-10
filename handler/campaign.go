@@ -1,12 +1,13 @@
 package handler
 
 import (
-	"bwastartup/campaign"
-	"bwastartup/helper"
-	"bwastartup/user"
 	"fmt"
 	"net/http"
 	"strconv"
+
+	"github.com/rizkymfz/golang-campaign/campaign"
+	"github.com/rizkymfz/golang-campaign/helper"
+	"github.com/rizkymfz/golang-campaign/user"
 
 	"github.com/gin-gonic/gin"
 )

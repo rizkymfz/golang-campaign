@@ -1,8 +1,9 @@
 package transaction
 
 import (
-	"bwastartup/campaign"
 	"errors"
+
+	"github.com/rizkymfz/golang-campaign/campaign"
 )
 
 type service struct {
