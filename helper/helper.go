@@ -1,6 +1,11 @@
 package helper
 
-import "github.com/go-playground/validator/v10"
+import (
+	"math/rand"
+	"time"
+
+	"github.com/go-playground/validator/v10"
+)
 
 type response struct {
 	Status  string `json:"status"`
@@ -27,4 +32,24 @@ func FormatValidationError(err error) []string {
 	}
 
 	return errors
+}
+
+func RandomString(n int) string {
+	const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	result := make([]byte, n)
+	src := rand.NewSource(time.Now().UnixNano())
+
+	for i, cache, remain := n-1, src.Int63(), 10; i >= 0; {
+		if remain == 0 {
+			cache, remain = src.Int63(), 10
+		}
+		if idx := int(cache & 0x3F); idx < len(letters) {
+			result[i] = letters[idx]
+			i--
+		}
+		cache >>= 6
+		remain--
+	}
+
+	return string(result)
 }
