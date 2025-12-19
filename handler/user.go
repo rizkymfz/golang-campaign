@@ -70,7 +70,7 @@ func (h *userHandler) Login(c *gin.Context) {
 	if err != nil {
 		errorMessage := gin.H{"errors": err.Error()}
 
-		response := helper.ApiResponse("error", http.StatusBadRequest, "Register failed", errorMessage)
+		response := helper.ApiResponse("error", http.StatusBadRequest, "Login failed", errorMessage)
 		c.JSON(http.StatusBadRequest, response)
 		return
 	}
@@ -155,6 +155,15 @@ func (h *userHandler) UploadAvatar(c *gin.Context) {
 
 	data := gin.H{"is_uploaded": true}
 	response := helper.ApiResponse("success", http.StatusOK, "Success upload avatar", data)
+
+	c.JSON(http.StatusOK, response)
+}
+
+func (h *userHandler) Me(c *gin.Context) {
+	currentUser := c.MustGet("currentUser").(user.User)
+
+	userData := user.FormatUser(currentUser, "")
+	response := helper.ApiResponse("success", http.StatusOK, "success get user data", userData)
 
 	c.JSON(http.StatusOK, response)
 }

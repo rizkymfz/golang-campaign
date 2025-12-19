@@ -57,7 +57,7 @@ func (s *service) Login(input LoginInput) (User, error) {
 
 	err = bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(password))
 	if err != nil {
-		return user, err
+		return user, errors.New("credentials doesn't match")
 	}
 
 	return user, nil

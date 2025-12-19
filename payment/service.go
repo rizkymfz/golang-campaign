@@ -1,6 +1,7 @@
 package payment
 
 import (
+	"github.com/rizkymfz/golang-campaign/config"
 	"github.com/rizkymfz/golang-campaign/user"
 	"github.com/veritrans/go-midtrans"
 )
@@ -18,8 +19,8 @@ func NewService() *service {
 
 func (s *service) GetPaymentURL(transaction Transaction, user user.User) (string, error) {
 	midclient := midtrans.NewClient()
-	midclient.ServerKey = ""
-	midclient.ClientKey = ""
+	midclient.ServerKey = config.GetEnv("MIDTRANS_SERVERKEY", "")
+	midclient.ClientKey = config.GetEnv("MIDTRANS_CLIENTKEY", "")
 	midclient.APIEnvType = midtrans.Sandbox
 
 	snapGateway := midtrans.SnapGateway{
